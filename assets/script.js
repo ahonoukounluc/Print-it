@@ -39,30 +39,17 @@ function SlideChanger() {
     });
 }
 
-function nextSlide() {
-    SlideActuel = (SlideActuel + 1) % slides.length;
-    SlideChanger();
-}
-
-function prevSlide() {
-    SlideActuel = (SlideActuel - 1 + slides.length) % slides.length;
-    SlideChanger();
-}
 
 nextButton.addEventListener("click", () => {
-    nextSlide();
+    //nextSlide();
+    SlideActuel = (SlideActuel + 1) % slides.length;
     SlideChanger();
 });
 
 prevButton.addEventListener("click", () => {
-    prevSlide();
+    //prevSlide();
+    SlideActuel = (SlideActuel - 1 + slides.length) % slides.length;
     SlideChanger();
 });
 
 SlideChanger();
-
-// Automatic sliding
-setInterval(() => {
-    nextSlide();
-    SlideChanger();
-}, 5000);
